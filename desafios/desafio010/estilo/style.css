@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+
+:root {
+    --cor1: #c8ffe6;
+    --cor2: #2fde83;
+    --cor3: #44b37a;
+    --cor4: #4a8969;
+    --cor5: #435e50;
+
+    --fonte-padrao: Arial, Verdana, sans-serif;
+    --fonte-destaque: "Bebas Neue", sans-serif;
+    --fonte-android: 'Android', sans-serif;
+}
+
+* { /* Configuração global */
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--cor1);
+    font-family: var(--fonte-padrao);
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor5), var(--cor4));
+
+    text-align: center;
+
+    margin: auto;
+    
+    min-height: 150px;
+
+    padding-top: 50px; /* Espaço em cima do H1*/
+    
+}
+
+header > h1 {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    font-family: var(--fonte-destaque);
+    color: white;
+    font-size: 2.8em;
+    font-weight: normal; /* Pois todo h1, h2, h3 etc já é negrito e estamos tirando esse negrito para ficar menos pesado de ler. */
+    text-shadow: 2px 2px 2px #0000008c;
+}
+
+header > p {
+    padding-left: 10px; /* Espaço para o texto não encostar do lado */
+    padding-right: 10px; /* Espaço para o texto não encostar do lado */
+
+    /* Queremos uma quebra no texto pra não ficar muito extenso. Transformarei o <p> em box usando um max-width e margin auto para centralizar a box.  */
+
+    max-width: 600px; /* Width (largura) máxima da box. */
+    margin: auto;
+
+    color: white;
+    font-size: 1.3em; /* 1.2 Significa porcentagem do tamanho da fonte (20% maior) */
+
+    text-shadow: 2px 2px 2px #0000008c;
+
+    margin-bottom: 20px;
+    
+}
+
+nav {
+    background-color: var(--cor4);
+    padding: 10px; /*Para a caixa ficar mais "gordinha".*/ 
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.281);
+
+}
+
+nav > a {
+    padding: 10px;
+    text-decoration: none; /* Para tirar o sublinhado que o link cria autom. */
+    color:var(--cor2); /* Cor do texto*/
+    font-weight: bold; /*Para deixar a fonte Negrito*/
+    border-radius: 5px; /*Para criar a borda arredondada. Não dá pra ver porque a cor está a mesma. Nesse caso só irá aparecer arredondada quando passar o mouse em cima. */
+    transition-duration: 0.3s; /*Para adicionar o efeito de fade quando passar o mouse no link menu*/
+
+}
+
+nav > a:hover { /*Para configurar o menu ao passar o mouse */
+    background-color: var(--cor1);
+    color: var(--cor4);
+}
+
+main {
+    
+    background-color: white;
+
+    min-width: 280px;
+    max-width: 800px;
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+    margin: auto; /* Para o maim ficar no meio da tela*/ 
+    margin-bottom: 30px;
+
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.527);
+    
+}
+
+main strong {
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+main img {  
+    width: 100%;
+}
+
+main img.pequena {
+    max-width: 300px;
+    display: block; /* Imagem não é box. Portanto, é preciso criar usando o display block. Logo conseguimos usar o margin auto para alinhar no centro. */
+    margin: auto;
+}
+
+main > article {
+    padding: 20px;
+}
+
+main h1 {
+    padding-left: 5px;
+    font-size: 1.6em;
+    font-family: var(--fonte-android);
+    font-weight: normal;
+}
+
+main h2 {
+    padding-left: 5px;
+    font-weight: normal;
+    font-size: 1.4em;
+    font-family: var(--fonte-android);
+    background-image: linear-gradient(to right,  var(--cor3), transparent); 
+}
+
+
+
+/* Configuração da margem dos parágrafos. */
+main p { 
+    /* Não colocando o > significa que o p pode estar dentro do main em qualquer nível. Ao utilizar o > queremos dizer que somente o p dentro do main irá ter tal configuração. IMPORTANTE*/
+    
+    margin: 15px 0px; /* Quando colocamos somente top e right, o CSS entende que terá as mesmas configurações para bottom e left. Significa isso 15px 0px 15px 0px.*/
+
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0px 3px;
+    color: black;
+    background-color: var(--cor3);
+    border-radius: 2px;
+    transition-duration: 0.3s;
+}
+
+main a:hover {
+    background-color: var(--cor2);
+}
+
+a[rel="external"]::after {
+    content: '\00a0\2197\FE0F';
+}
+
+div.video {
+    background-color: var(--cor4);
+    padding: 20px;
+    padding-bottom: 56.6%;
+    margin: 0px -20px 30px -20px; 
+    /* Para deixar a box grudada no main. Somar padding do main(10px) e do article(10px) resultando em -20px de margin para grudar.*/
+    position: relative;
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside {
+    padding: 10px;
+    background-color: var(--cor3);
+    border-radius: 8px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.473);
+}
+
+aside ul {
+    list-style-type: '\1F383\00A0';
+    list-style-position: inside; /* Para deixar os pontos da lista pra dentro da box. */
+    columns: 2; /* Para criar 2 colunas nas listas*/
+}
+
+aside h3 {
+    font-weight: bold;
+    color: white;
+    background-color: var(--cor5);
+    margin: -10px -10px 0px -10px; /* Para preencher a box certinha com o aside. Tem que ter o mesmo valor do padding de aside. */
+    padding: 10px;
+    border-radius: 8px 8px 0px 0px;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    background-color: var(--cor5);
+    padding: 5px;
+}
+
+footer a {
+    font-weight: bolder;
+    color: white;
+}
+
+footer a:hover {
+    color: var(--cor3);
+}

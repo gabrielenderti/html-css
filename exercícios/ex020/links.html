@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        a {
+            color: green;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: red;
+        }
+
+        a:active {
+            color: blueviolet;
+        }
+
+        a:visited {
+            color: darkgreen;
+        }
+
+        a::after {
+            content: '\002744';
+        }
+
+        a::before {
+            content: '\2745';
+        }
+    </style>
+</head>
+<body>
+    <h1>Personalizando Links</h1>
+    <ul>
+        <li><a href="https://www.youtube.com/" target="_blank">YouTube</a></li>
+        <li><a href="https://www.dafont.com/pt/" target="_blank">DaFont</a></li>
+    </ul>
+</body>
+</html>
